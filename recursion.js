@@ -23,9 +23,14 @@ console.log(longest(["hello", "hi", "hola"]));
 
 /** everyOther: return a string with every other letter. */
 
-function everyOther(str) {
-
+function everyOther(str, i=0, newStr="") {
+  //Base Case
+  if(i === str.length) return newStr;
+  if(i % 2 === 0) newStr += str[i];
+  return everyOther(str, i+1, newStr);
 }
+
+console.log(everyOther("hello"))
 
 /** isPalindrome: checks whether a string is a palindrome or not. */
 
