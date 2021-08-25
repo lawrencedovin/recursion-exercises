@@ -11,9 +11,15 @@ console.log(product([2, 3, 4]));
 
 /** longest: return the length of the longest word in an array of words. */
 
-function longest(words) {
-
+function longest(words, i=0, largest = 0) {
+  //Base Case
+  if(i === words.length) return largest;
+  //Normal Case
+  if(largest < words[i].length) largest = words[i].length;
+  return longest(words, i+1, largest);
 }
+
+console.log(longest(["hello", "hi", "hola"]));
 
 /** everyOther: return a string with every other letter. */
 
