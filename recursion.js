@@ -1,8 +1,13 @@
 /** product: calculate the product of an array of numbers. */
 
-function product(nums) {
-
+function product(nums, i=0) {
+  // Base Case
+  if(i === nums.length) return 1;
+  // Normal Case
+  return nums[i] * product(nums, i+1);
 }
+
+console.log(product([2, 3, 4]));
 
 /** longest: return the length of the longest word in an array of words. */
 
